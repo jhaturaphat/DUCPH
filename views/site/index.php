@@ -3,7 +3,9 @@
     use kv4nt\owlcarousel\OwlCarouselWidget;
  ?>
 
-<?= $this->render('@app/views/layouts/_slider') ?>       
+<?= $this->render('@app/views/layouts/_slider') ?>   
+
+<?= $this->render('@app/views/king-event/index') ?>       
 
 <div class="menu-buttom">
     <div class="ducph">
