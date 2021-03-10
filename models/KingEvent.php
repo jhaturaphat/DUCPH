@@ -107,7 +107,7 @@ class KingEvent extends \yii\db\ActiveRecord
         }
     }
 
-    public static function getThumnail($model){
+    public static function getThumnails($model){
         $imgFiles = \yii\helpers\FileHelper::findFiles(Yii::getAlias('@web').str_replace("/" , "\\" ,$model->folder_img) ,['only'=>['*.*']]);
         $arr = [];
         foreach($imgFiles as $files)
@@ -118,6 +118,18 @@ class KingEvent extends \yii\db\ActiveRecord
         }
         return $arr;
     }
+    public static function getThumnail($path){
+        $imgFiles = \yii\helpers\FileHelper::findFiles(Yii::getAlias('@web').str_replace("/" , "\\" ,$path) ,['only'=>['*.*']]);
+        $arr = [];
+        foreach($imgFiles as $files)
+        {
+            $explodeImg = explode('\\', $files);
+            $imgName = end($explodeImg);
+            $arr[] = Yii::getAlias('@web').$path.$imgName;
+        }
+        return $arr;
+    }
+    
     public static function getPreviews($model){
         $imgFiles = \yii\helpers\FileHelper::findFiles(Yii::getAlias('@web').str_replace("/" , "\\" ,$model->folder_img) ,['only'=>['*.*']]);
         $arr = [];        

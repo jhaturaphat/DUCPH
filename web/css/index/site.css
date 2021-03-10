@@ -5,6 +5,15 @@
     src: url("../SB-MODERN.TTF");
 }
 
+.content-head {
+    font-size: 36px;
+    font-family: 'modern';
+    color: white;
+     height: 66px; 
+    line-height: 66px;
+    background-color: rgba(0, 142, 207, 0.9);   
+}
+
 
 /* Overide boostrap */
 @media (min-width: 1200px){
@@ -36,4 +45,7 @@
 }
 .bg-light {
     background-color: #ffffff !important;
+}
+.img-thumbnail{
+    border: 0;
 }

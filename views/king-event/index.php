@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
-use app\models\KingEventSearch;
+use app\models\KingEvent;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\KingEventSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -11,12 +11,11 @@ use app\models\KingEventSearch;
 ?>
 
 <?php 
-    $searchModel = new KingEventSearch();
-    $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+    $model = new KingEvent();    
 ?>
 <div class="king-event-index">
 <pre>
-<?= print_r($dataProvider) ?>
+<?= print_r($model::find()->asArray()->all() )?>
 </pre>
    
 </div>

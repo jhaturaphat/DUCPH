@@ -5,7 +5,7 @@
 
 <?= $this->render('@app/views/layouts/_slider') ?>   
 
-<?= $this->render('@app/views/king-event/index') ?>       
+
 
 <div class="menu-buttom">
     <div class="ducph">
@@ -30,6 +30,8 @@
     </div>
 </div>
 <!-- Conten ทั่วไป -->
+
+<?= $this->render('@app/views/king-event/card') ?>       
 
 <!-- <body>
     <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>  
