@@ -38,6 +38,7 @@ class KingEventController extends Controller
         $searchModel = new KingEventSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+        //$this->layout = 'layout2'; //สั่งให้ rander บน layout2.php ใน /views/layout/layout2.php       
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,

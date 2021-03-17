@@ -16,7 +16,7 @@ $this->registerCssFile("@web/css/index/site.css");
     $model = new KingEvent();    
 ?>
 
-<div class="king-event-index">
+<div class="king-event-index" id="king-event">
 <div class="head-content">
         กิจกรรมเฉลิมพระเกียรติ
 </div>

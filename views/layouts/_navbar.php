@@ -43,7 +43,7 @@
                 ['label' => 'ข่าวทั่วไป', 'url' => ['/news-document']],                 
                 ['label' => 'สมัครงาน', 'url' => ['/news-document']],
                 ['label' => 'จัดซื้อจัดจ้าง', 'url' => ['/news-document']],
-                ['label' => 'กิจกรรมเฉลิมพระเกียรติ', 'url' => '#'],
+                ['label' => 'กิจกรรมเฉลิมพระเกียรติ', 'url' => ['/king-event']],
             ]],
             ['label' => 'บริการผู้ป่วย', 'items' => [
                 ['label' => 'ค้นหาแพทย์', 'url' => ['/doctor']],        
