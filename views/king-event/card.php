@@ -15,8 +15,8 @@ use app\models\KingEvent;
 ?>
 
 <div class="king-event-index">
-<div class="content-head">
-        <h1>กิจกรรมเฉลิมพระเกียรติ</h1>
+<div class="head-content gold">
+        กิจกรรมเฉลิมพระเกียรติ
 </div>
     <div class="container">
     <div class="row ">
@@ -30,17 +30,19 @@ use app\models\KingEvent;
                 <span><?= $value['create_at'] ?></span>
             </div>            
             <h2><?= $value['title'] ?></h2>
-            <p><?= substr($value['detail'],0, 1000) ?></p>
-            <p>            
-            <a class="btn btn-secondary" href="#" role="button">อ่านต่อ »</a>
+            <p class="word-over"><?= $value['detail'] ?></p>
+            <p>      
+            <?= Html::a('อ่านต่อ »', ['king-event/view', 'id' => $value['id']], ['class' => 'btn btn-secondary']) ?>
             </p>
         </div>
     <?php } ?>
 
-    <div class="text-center">
-        <button class="btn btn-primary">อ่านทั้งหมด...</button>
+    <div class="text-center">        
+        <?= Html::a('กิจกรรมทั้งหมด...', ['king-event/index'], ['class' => 'btn btn-primary']) ?>
     </div>
 
     </div>
     </div>
 </div>
+
+<hr class="my-4">

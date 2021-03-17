@@ -31,7 +31,9 @@
 </div>
 <!-- Conten ทั่วไป -->
 
-<?= $this->render('@app/views/king-event/card') ?>       
+<?php echo $this->render('@app/views/king-event/card') ?>       
+
+<?php echo $this->render('@app/views/news-document/index') ?>       
 
 <!-- <body>
     <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>  
@@ -41,6 +43,10 @@
 </body> -->
 
 <section id="two">
+<div class="head-content pink">
+<img src="<?= Yii::getAlias('@web') ?>/img/icon/mask.png" class="icon" >  
+ความรู้ด้านสุขภาพ 
+</div>
     <div class="conten-service">
         <div class="service-box">
             <img src="<?= Yii::getAlias('@web') ?>/img/service/กัญชา.png" alt="">           

@@ -7,11 +7,11 @@ use yii\widgets\DetailView;
 /* @var $model app\models\NewsDocument */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'News Documents', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'ข่าวประชาสัมพันธ์', 'url' => ['/site/index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="news-document-view">
+<div class="news-document-view container">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

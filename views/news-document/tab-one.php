@@ -41,7 +41,7 @@ $dataProvider = new ActiveDataProvider([
                 ],
                 'buttons' => [
                     'view' =>  function($url,$model) {
-                        return Html::a('<i class="fas fa-eye"></i>', $url, [
+                        return Html::a('<i class="fas fa-eye"></i>', ['/news-document/view','id'=>$model->id], [
                             'title' => Yii::t('app', 'view')
                         ]);
                     },
@@ -70,5 +70,6 @@ $dataProvider = new ActiveDataProvider([
 ?>
 
 <button class="btn btn btn-primary">อ่านทั้งหมด ...</button>
+
 
 

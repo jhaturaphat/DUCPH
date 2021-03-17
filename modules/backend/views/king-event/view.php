@@ -3,12 +3,12 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use yii\helpers\Url;
-use app\assets\AppAssetLightbox;
+
 /* @var $this yii\web\View */
 /* @var $model app\models\KingEvent */
 
 
-AppAssetLightbox::register($this);
+app\assets\AppAssetLightbox::register($this);
 
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'กิจกรรมเฉลิมพระเกียรติ', 'url' => ['index']];

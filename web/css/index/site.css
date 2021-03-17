@@ -1,17 +1,26 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap');
-@font-face {
-    font-family: "modern";
-    src: url("../SB-MODERN.TTF");
+body{
+    font-family: 'kanit'; 
 }
 
-.content-head {
-    font-size: 36px;
-    font-family: 'modern';
+.head-content {
+    font-size: 36px;    
     color: white;
+    align-items: center;
      height: 66px; 
     line-height: 66px;
-    background-color: rgba(0, 142, 207, 0.9);   
+    text-align: center;    
+    margin-bottom: 20px; 
+}
+.gold{
+    background-color: rgba(255, 215, 0, 0.9);  
+}
+.pink{
+    background: rgba(255,124,216,0.9);
+}
+.icon{
+    position: relative;
+    top: -4px;
+    width: 60px;
 }
 
 
@@ -36,7 +45,7 @@
         width: 750px;
     }
 }
-.container {
+.container {     
     width: 95% !important;
     padding-right: 0 !important;
     padding-left: 0 !important;
@@ -48,4 +57,11 @@
 }
 .img-thumbnail{
     border: 0;
+}
+.word-over{
+    position: relative;
+    overflow: hidden;
+    height: 120px;
+    text-overflow: ellipsis; 
+
 }

@@ -4,6 +4,10 @@ use kartik\tabs\TabsX;
 use app\models\NewsType;
 ?>
 
+<div class="head-content pink">
+ ข่าวประชาสัมพันธ์ 
+</div>
+
 <?php
 $tabs = array();
 // $this->render('@app/views/hosxp-dashboard/dashboard') 
@@ -32,3 +36,5 @@ foreach(NewsType::findAll(['active'=>'YES']) as $item){
 </div>
  
 </div>
+
+<br>
