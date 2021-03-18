@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 $this->title = 'ข่าวประชาสัมพันธ์';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="news-document-index">
+<div class="news-document-index container">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
