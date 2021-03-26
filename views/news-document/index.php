@@ -11,16 +11,14 @@ use app\models\NewsType;
 
 <?php
 $tabs = array();
-// $this->render('@app/views/hosxp-dashboard/dashboard') 
+
 foreach(NewsType::findAll(['active'=>'YES']) as $item){
     $tab['label'] = '<i class="fas fa-volume-up"></i>  '.$item['name'];
-    $tab['content'] = $this->render('tab-one',[
-        'id' => $item['id']
-        ]);
+    $tab['content'] = $this->render('tab-one',['id' => $item['id']]);
     array_push($tabs,$tab);
 }
 
-//print_r($tabs);
+
 ?>
 <div class="container">
 <div class="row">

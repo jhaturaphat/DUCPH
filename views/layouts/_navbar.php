@@ -22,7 +22,7 @@
             </div>                    
             <ul>
                 <li><a href="#"><img src="<?= Yii::getAlias('@web') ?>/img/icon/icon-th.png" alt=""></a></li>
-                <li><a href="#"><img src="<?= Yii::getAlias('@web') ?>/img/icon/icon-en.png" alt=""></a></li>
+                <!-- <li><a href="#"><img src="<?php Yii::getAlias('@web') ?>/img/icon/icon-en.png" alt=""></a></li> -->
             </ul>
         </div>   
     </div>              
@@ -39,6 +39,7 @@
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav mr-auto h5'],
         'items' => [
+            ['label'=>'หน้าแรก', 'url' => Yii::$app->homeUrl],
             ['label' => 'ข่าวประชาสัมพันธ์', 'items' => [
                 ['label' => 'ข่าวทั่วไป', 'url' => ['/news-document']],                 
                 ['label' => 'สมัครงาน', 'url' => ['/news-document']],

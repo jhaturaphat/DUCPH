@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\NewsDocument;
@@ -69,6 +70,13 @@ class NewsDocumentSearch extends NewsDocument
             ->andFilterWhere(['like', 'detail', $this->detail])
             ->andFilterWhere(['like', 'public', $this->public]);
 
+        return $dataProvider;
+    }
+    public function searchType($id){        
+        $query = NewsDocument::find();
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query->where(['news_type_id' => $id])
+        ]);
         return $dataProvider;
     }
 }

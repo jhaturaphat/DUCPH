@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\NewsType;
 use app\models\NewsDocument;
 use app\models\NewsDocumentSearch;
 use yii\web\Controller;
@@ -46,6 +47,23 @@ class NewsDocumentController extends Controller
     }
 
     /**
+     * Lists all NewsDocument models.
+     * @return mixed
+     */
+    public function actionType($id)
+    {        
+        $this->layout = 'layout2'; //สั่งให้ rander บน layout2.php ใน /views/layout/layout2.php        
+        $searchModel = new NewsDocumentSearch();
+        $dataProvider = $searchModel->searchType($id);
+        $dataProvider->sort = ['defaultOrder' => ['create_at'=>SORT_DESC]];                
+        return $this->render('type', [
+            'model' => NewsType::findOne(['id'=>$id]),
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
      * Displays a single NewsDocument model.
      * @param integer $id
      * @return mixed
@@ -78,9 +96,10 @@ class NewsDocumentController extends Controller
 
     
     public function actionDownload($id){
+
         $model = $this->findModel($id);
         if (file_exists($model->path)) {
-            return Yii::$app->response->sendFile($model->path);
+            return Yii::$app->response->xSendFile($model->path);            
         } else {
             throw new \yii\web\NotFoundHttpException("{$file} หาไฟล์ไม่พบ!");
         }

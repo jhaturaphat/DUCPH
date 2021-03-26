@@ -23,7 +23,7 @@ $dataProvider = new ActiveDataProvider([
     ]);
     ?>
     <br>
-    <a href="<?= Url::to(['news-document/index','type' => $id]); ?>" class="btn btn-info">อ่านทั้งหมด ...</a>
+    <a href="<?= Url::to(['news-document/type', 'id'=>$id]); ?>" class="btn btn-info">อ่านทั้งหมด ...</a>
     
 
 
