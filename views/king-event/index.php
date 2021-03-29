@@ -21,13 +21,13 @@ $this->registerCssFile("@web/css/index/site.css");
         กิจกรรมเฉลิมพระเกียรติ
 </div>
     <div class="container">
-    <div class="row ">
+    <div class="row king">
     <?php foreach($model::find()->asArray()->all() as $value){ ?>   
-        <div class="col-md-3">
+        <div class="col-md-3 ">
             <div class="text-center">
             <img class="img-thumbnail" src="<?= $model::getThumnail($value['folder_img'])[0] ?>" alt="">
             </div>
-            <div>
+            <div class="xxxx">
                 <span class="fas fa-calendar"></span>
                 <span><?= $value['create_at'] ?></span>
             </div>            
@@ -41,3 +41,5 @@ $this->registerCssFile("@web/css/index/site.css");
     </div>
     </div>
 </div>
+
+

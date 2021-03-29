@@ -50,7 +50,7 @@
                 ['label' => 'ค้นหาแพทย์', 'url' => ['/doctor']],        
                 ['label' => 'ตารางออกตรวจ', 'url' => '#'],        
                 ['label' => 'ห้องพิเศษ', 'url' => '#'],        
-                ['label' => 'สิทธิผู้ป่วย', 'url' => '#'],        
+                ['label' => 'สิทธิผู้ป่วย', 'url' => 'https://eservices.nhso.go.th/eServices/mobile/login.xhtml'],        
             ]],
             ['label' => 'บริการของเรา', 'items' => [
                 ['label' => 'บริการทั่วไป', 'url' => '#'],

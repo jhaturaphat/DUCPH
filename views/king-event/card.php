@@ -46,3 +46,9 @@ use app\models\KingEvent;
 </div>
 
 <hr class="my-4">
+
+<?php
+    $this->registerJs("        
+    jQuery('.king-event-index').animateCss('fadeInRight');    
+    ");
+?>
