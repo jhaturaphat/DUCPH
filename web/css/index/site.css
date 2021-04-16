@@ -64,3 +64,12 @@ body{
     height: 120px;
     text-overflow: ellipsis; 
 }
+.head-content {
+    font-size: 36px;
+    color: white;
+    align-items: center;
+    height: 100px !important;
+    line-height: 100px !important;
+    text-align: center;
+    margin-bottom: 20px;
+}

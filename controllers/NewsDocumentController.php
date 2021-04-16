@@ -51,7 +51,7 @@ class NewsDocumentController extends Controller
      * @return mixed
      */
     public function actionType($id)
-    {        
+    { 
         $this->layout = 'layout2'; //สั่งให้ rander บน layout2.php ใน /views/layout/layout2.php        
         $searchModel = new NewsDocumentSearch();
         $dataProvider = $searchModel->searchType($id);

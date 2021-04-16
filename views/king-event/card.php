@@ -14,7 +14,7 @@ use app\models\KingEvent;
     $model = new KingEvent();    
 ?>
 
-<div class="king-event-index">
+<div class="king-event-index" style="background-color: #f9f9f9;">
 <div class="head-content gold">
         กิจกรรมเฉลิมพระเกียรติ
 </div>
@@ -32,21 +32,18 @@ use app\models\KingEvent;
             <h2><?= $value['title'] ?></h2>
             <p class="word-over"><?= $value['detail'] ?></p>
             <p>      
-            <?= Html::a('อ่านต่อ »', ['king-event/view', 'id' => $value['id']], ['class' => 'btn btn-secondary']) ?>
+            <?= Html::a('อ่านต่อ »', ['king-event/view', 'id' => $value['id']], ['class' => 'btn btn-success']) ?>
             </p>
         </div>
     <?php } ?>
 
-    <div class="text-center">        
-        <?= Html::a('กิจกรรมทั้งหมด...', ['king-event/index'], ['class' => 'btn btn-primary']) ?>
+    <div class="text-right col-md-12">        
+        <?= Html::a('กิจกรรมทั้งหมด...', ['king-event/index'], ['class' => 'btn btn-info float-right']) ?>
     </div>
-
     </div>
     </div>
 </div>
-
-<hr class="my-4">
-
+<br>
 <?php
     $this->registerJs("        
     jQuery('.king-event-index').animateCss('fadeInRight');    
