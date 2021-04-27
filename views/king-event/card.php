@@ -23,7 +23,7 @@ use app\models\KingEvent;
     <?php foreach($model::find()->asArray()->limit(4)->all() as $value){ ?>   
         <div class="col-md-3">
             <div class="text-center">
-            <img class="img-thumbnail" src="<?= $model::getThumnail($value['folder_img'])[0] ?>" alt="">
+            <img class="img-thumbnail" src="<?= $model::getImage($value['folder_img'])[0] ?>" alt="">
             </div>
             <div>
                 <span class="fas fa-calendar"></span>

@@ -27,21 +27,27 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?php 
 //'.Yii::getAlias('@web').$model->folder_img.$imgName.'
-$imgFiles = \yii\helpers\FileHelper::findFiles(Yii::getAlias('@web').str_replace("/" , "\\" ,$model->folder_img) ,['only'=>['*.*']]);
+$dir = $model->folder_img;
+$root = scandir($dir);
+        foreach($root as $value)
+        {
+            if($value === '.' || $value === '..') {continue;}
+            if(is_file("$dir/$value")) {$result[]="$dir/$value";continue;}
+            foreach(find_all_files("$dir/$value") as $value)
+            {
+                $result[]=$value;
+            }
+        }
 echo '<div class="container">';
 echo '<div id="my-light-boox" class="row no-gutters">';
-foreach($imgFiles as $files)
-   {
-        $explodeImg = explode('\\', $files);
-        $imgName = end($explodeImg);
+foreach($result as $files)
+   {   
         echo '<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-        <a data-lightbox="mygallery" href="'.Yii::getAlias('@web').$model->folder_img.$imgName.'">
-        <img src="'.Yii::getAlias('@web').$model->folder_img.$imgName.'" class="art img-fluid">
+        <a data-lightbox="mygallery" href="'.Yii::getAlias('@web/').$files.'">
+        <img src="'.Yii::getAlias('@web/').$files.'" class="art img-fluid">
         </a>
         </div>';
     }
-
-    
 
 ?> 
 <?php
