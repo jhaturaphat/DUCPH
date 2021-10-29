@@ -4,7 +4,7 @@ namespace app\modules\backend\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
-use app\modules\models\backend\NewsType;
+use app\modules\backend\models\NewsType;
 use app\modules\models\backend\NewsTypeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
