@@ -2,7 +2,7 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=web_hospital',
+    'dsn' => 'mysql:host=192.168.100.5;dbname=web_hospital',
     'username' => 'noom',
     'password' => '__123456__',
     'charset' => 'utf8',

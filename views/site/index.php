@@ -49,7 +49,7 @@
 </div>
     <div class="conten-service">
         <div class="service-box">
-            <img src="<?= Yii::getAlias('@web') ?>/img/service/กัญชา.png" alt="">           
+            <img src="<?= Yii::getAlias('@web') ?>/img/service/xxx.png" alt="">           
             <p>
                 การใช้กัญชาทางการแพทย์ เพื่อเพิ่มโอกาส
                 ในการรักษาโรคให้กับประชาชนที่เจ็บป่วยทรมาน
