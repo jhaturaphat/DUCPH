@@ -9,7 +9,7 @@ use yii\helpers\Url;
 
 $dataProvider = new ActiveDataProvider([
     'query' => NewsDocument::find()->where(['news_type_id' => $id]),
-    'pagination' => ['pageSize' => 10]
+    'pagination' => ['pageSize' => 5]
 ]);
 
 
@@ -18,7 +18,7 @@ $dataProvider = new ActiveDataProvider([
 <?php
     echo ListView::widget([
         'dataProvider' => $dataProvider,
-        'itemView' => '/news-document/_item', 
+        'itemView' => '/news-document/_item',
         'layout' => '{items}',
     ]);
     ?>

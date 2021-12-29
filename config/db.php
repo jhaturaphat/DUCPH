@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=192.168.100.5;dbname=web_hospital',
-    'username' => 'noom',
-    'password' => '__123456__',
+    'dsn' => 'mysql:host=127.0.0.1;dbname=web_hospital',
+    'username' => 'root',
+    'password' => '123456',
     'charset' => 'utf8',
 
     // 'class' => 'yii\db\Connection',
