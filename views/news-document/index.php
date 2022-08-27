@@ -73,6 +73,10 @@ function show_job_image(){
 </script>
 
 <style>
+li.nav-item {
+    margin-left: -30px;
+    margin-right:30px;
+}
 .img-box img {
   max-height: 50vh;
 }

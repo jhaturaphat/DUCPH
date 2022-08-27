@@ -44,7 +44,7 @@ $config = [
             ],
             'route' => null, // disable menu
         ],
-    ],
+    ],    
     'components' => [ 
         'Utility' => ['class' => 'app\components\Utility'],
         'assetManager' => [

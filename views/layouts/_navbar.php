@@ -4,47 +4,35 @@
     use yii\bootstrap4\Nav;
     use yii\bootstrap4\NavBar;
 ?>
-<div class="header">    
-    <div class="banner"> 
-        <div class="animate">
-            <a href="<?= Url::home()?>">
-                <img src="<?= Yii::getAlias('@web') ?>/img/icon/logo.png">
-            </a>
-            <div class="link-logo">                    
-                <a href="<?= Url::home()?>">detudom crown prince hospital</a> 
-                <a href="<?= Url::home()?>">โรงพยาบาลสมเด็จพระยุพราชเดชอุดม</a>
-            </div>
-        </div>                
-        <div class="search">
-            <div class="input-search">
-                <input type="text">
-                <i class="fas fa-search"></i>
-            </div>                    
-            <ul>
-                <li><a href="#"><img src="<?= Yii::getAlias('@web') ?>/img/icon/icon-th.png" alt=""></a></li>
-                <!-- <li><a href="#"><img src="<?php Yii::getAlias('@web') ?>/img/icon/icon-en.png" alt=""></a></li> -->
-            </ul>
-        </div>   
-    </div>              
-</div>
+<nav class="navbar navbar-light bg-light" style="background-color: coral;">
+  <a class="navbar-brand">
+  <img src="<?= Yii::getAlias('@web') ?>/img/icon/logo.png">
+  โรงพยาบาลสมเด็จพระยุพราชเดชอุดม
+  </a>
+  <form class="form-inline d-none d-sm-block d-md-block">
+    <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+  </form>
+</nav>
 <!--  -->
 <?php
     NavBar::begin([        
         'brandUrl' => Yii::$app->homeUrl,
         'renderInnerContainer' => false,
         'options' => [
-            'class' => 'row navbar navbar-expand-lg navbar-light bg-light sticky-top ',
+            'class' => 'row navbar navbar-expand-lg navbar-light bg-light sticky-top mt-n2',
         ],
     ]);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav mr-auto h5'],
         'items' => [
             ['label'=>'หน้าแรก', 'url' => Yii::$app->homeUrl],
-            ['label' => 'ข่าวประชาสัมพันธ์', 'items' => [
-                ['label' => 'ข่าวทั่วไป', 'url' => ['/news-document']],                 
-                ['label' => 'สมัครงาน', 'url' => ['/news-document']],
-                ['label' => 'จัดซื้อจัดจ้าง', 'url' => ['/news-document']],
-                ['label' => 'กิจกรรมเฉลิมพระเกียรติ', 'url' => ['/king-event']],
+            [
+                'options'=> ['class'=>''],
+                'label' => 'ข่าวประชาสัมพันธ์', 'items' => [
+                    ['label' => 'ข่าวทั่วไป', 'url' => ['/news-document']],                 
+                    ['label' => 'สมัครงาน', 'url' => ['/news-document']],
+                    ['label' => 'จัดซื้อจัดจ้าง', 'url' => ['/news-document']],
+                    ['label' => 'กิจกรรมเฉลิมพระเกียรติ', 'url' => ['/king-event']],
             ]],
             ['label' => 'บริการผู้ป่วย', 'items' => [
                 ['label' => 'ค้นหาแพทย์', 'url' => ['/doctor']],        
@@ -81,7 +69,7 @@
                 . Html::beginForm(['/user/security/logout'], 'post')
                 . Html::submitButton(
                     'ออก (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-success logout']
+                    ['class' => 'btn btn-danger logout']
                 )
                 . Html::endForm()
                 . '</li>'
