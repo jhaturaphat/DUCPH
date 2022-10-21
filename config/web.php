@@ -2,11 +2,11 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
-$hosxp = require __DIR__ . '/hosxp.php';
+
 
 $config = [
     'id' => 'basic',
-    'name' => 'โรงพยาบาลสมเด็จพระยุพราชเดชอุดม',
+    'name' => 'โปรแกรมสารบรรณ รพร.เดชอุดม',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'language' => 'th_TH',
@@ -85,8 +85,7 @@ $config = [
                 ],
             ],
         ],
-        'db' => $db,
-        'hosxp' => $hosxp,
+        'db' => $db,        
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
