@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'ข่าวประชาสั�
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="news-document-view">
+<div class="news-document-view container">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\helpers\Url;
+use yii\helpers\FileHelper;
 
 /**
  * This is the model class for table "king_event".
@@ -107,21 +108,68 @@ class KingEvent extends \yii\db\ActiveRecord
         }
     }
 
-    public static function getThumnail($model){
-        $imgFiles = \yii\helpers\FileHelper::findFiles(Yii::getAlias('@web').str_replace("/" , "\\" ,$model->folder_img) ,['only'=>['*.*']]);
+    public static function getThumnails($model){
+        $root = scandir($dir);
+        foreach($root as $value)
+        {
+            if($value === '.' || $value === '..') {continue;}
+            if(is_file("$dir/$value")) {$result[]="$dir/$value";continue;}
+            foreach(find_all_files("$dir/$value") as $value)
+            {
+                $result[]=$value;
+            }
+        }
         $arr = [];
-        foreach($imgFiles as $files)
+        foreach($result as $files)
         {
             $explodeImg = explode('\\', $files);
             $imgName = end($explodeImg);
-            $arr[] = Yii::getAlias('@web').$model->folder_img.$imgName;
+            // $arr[] = Yii::getAlias('@web').$model->folder_img.$imgName;
+            $arr[] = $model->folder_img.$imgName;
         }
         return $arr;
     }
+    public static function getThumnail($dir){        
+        $root = scandir($dir);
+        foreach($root as $value)
+        {
+            if($value === '.' || $value === '..') {continue;}
+            if(is_file("$dir/$value")) {$result[]="$dir/$value";continue;}
+            foreach(find_all_files("$dir/$value") as $value)
+            {
+                $result[]=$value;
+            }
+        }
+        return $result;
+    }
+
+    public static function getImage($dir){
+        $root = scandir($dir);
+        foreach($root as $value)
+        {
+            if($value === '.' || $value === '..') {continue;}
+            if(is_file("$dir/$value")) {$result[]="$dir/$value";continue;}
+            foreach(find_all_files("$dir/$value") as $value)
+            {
+                $result[]=$value;
+            }
+        }
+        return $result;
+    }
+    
     public static function getPreviews($model){
-        $imgFiles = \yii\helpers\FileHelper::findFiles(Yii::getAlias('@web').str_replace("/" , "\\" ,$model->folder_img) ,['only'=>['*.*']]);
+        $root = scandir($dir);
+        foreach($root as $value)
+        {
+            if($value === '.' || $value === '..') {continue;}
+            if(is_file("$dir/$value")) {$result[]="$dir/$value";continue;}
+            foreach(find_all_files("$dir/$value") as $value)
+            {
+                $result[]=$value;
+            }
+        }
         $arr = [];        
-        foreach($imgFiles as $files)
+        foreach($result as $files)
         {
             $explodeImg = explode('\\', $files);
             $imgName = end($explodeImg);

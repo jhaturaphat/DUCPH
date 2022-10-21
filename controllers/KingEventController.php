@@ -1,0 +1,78 @@
+<?php
+
+namespace app\controllers;
+
+use Yii;
+use app\models\KingEvent;
+use app\models\KingEventSearch;
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
+
+/**
+ * KingEventController implements the CRUD actions for KingEvent model.
+ */
+class KingEventController extends Controller
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * Lists all KingEvent models.
+     * @return mixed
+     */
+    public function actionIndex()
+    {
+        $searchModel = new KingEventSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        $this->layout = 'layout3'; //สั่งให้ rander บน layout2.php ใน /views/layout/layout2.php       
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
+     * Displays a single KingEvent model.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionView($id)
+    {
+        $this->layout = 'layout3'; //สั่งให้ rander บน layout.php ใน /views/layout/layout2.php
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+
+    /**
+     * Finds the KingEvent model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return KingEvent the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = KingEvent::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
+}

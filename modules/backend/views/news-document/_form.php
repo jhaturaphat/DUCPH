@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\file\FileInput;
-use app\modules\models\NewsType;
+use app\modules\backend\models\NewsType;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
@@ -11,7 +11,7 @@ use yii\helpers\Url;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="news-document-form">
+<div class="news-document-form container">
 
     <?php $form = ActiveForm::begin(); ?>
 

@@ -9,7 +9,7 @@ $this->title = 'สร้าง ข่าวประชาสัมพันธ
 $this->params['breadcrumbs'][] = ['label' => 'ข่าวประชาสัมพันธ์', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="news-document-create">
+<div class="news-document-create container">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

@@ -1,5 +1,5 @@
 <?php
-
+// Comment 2 บรรทัดนี้ไว้เมื่อนำไปขึ้นบน server จริง
 // comment out the following two lines when deployed to production
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 defined('YII_ENV') or define('YII_ENV', 'dev');

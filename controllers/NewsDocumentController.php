@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\NewsType;
 use app\models\NewsDocument;
 use app\models\NewsDocumentSearch;
 use yii\web\Controller;
@@ -46,6 +47,23 @@ class NewsDocumentController extends Controller
     }
 
     /**
+     * Lists all NewsDocument models.
+     * @return mixed
+     */
+    public function actionType($id)
+    { 
+        $this->layout = 'layout2'; //สั่งให้ rander บน layout2.php ใน /views/layout/layout2.php        
+        $searchModel = new NewsDocumentSearch();
+        $dataProvider = $searchModel->searchType($id);
+        $dataProvider->sort = ['defaultOrder' => ['create_at'=>SORT_DESC]];                
+        return $this->render('type', [
+            'model' => NewsType::findOne(['id'=>$id]),
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
      * Displays a single NewsDocument model.
      * @param integer $id
      * @return mixed
@@ -76,39 +94,17 @@ class NewsDocumentController extends Controller
         ]);
     }
 
-    /**
-     * Updates an existing NewsDocument model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($id)
-    {
+    
+    public function actionDownload($id){
+
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if (file_exists($model->path)) {
+            return Yii::$app->response->xSendFile($model->path);            
+        } else {
+            throw new \yii\web\NotFoundHttpException("{$file} หาไฟล์ไม่พบ!");
         }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
     }
 
-    /**
-     * Deletes an existing NewsDocument model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
-    }
 
     /**
      * Finds the NewsDocument model based on its primary key value.

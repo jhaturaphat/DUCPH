@@ -20,6 +20,7 @@ class AppAssetIndex extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        'css/font.css',
         'css/index/style.css',
         'css/index/banner.css',
         'css/index/navbar.css',

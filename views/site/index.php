@@ -3,7 +3,9 @@
     use kv4nt\owlcarousel\OwlCarouselWidget;
  ?>
 
-<?= $this->render('@app/views/layouts/_slider') ?>       
+<?= $this->render('@app/views/layouts/_slider') ?>   
+
+
 
 <div class="menu-buttom">
     <div class="ducph">
@@ -21,13 +23,17 @@
             <li><a href="#"><img src="<?= Yii::getAlias('@web') ?>/img/icon/dental.png" alt=""><label for="">ทันตกรรม</label></a></li>
             <li><a href="#"><img src="<?= Yii::getAlias('@web') ?>/img/icon/calendar.png" alt=""><label for="">ค้นหาบัตรนัด</label></a></li>
             <li><a href="#"><img src="<?= Yii::getAlias('@web') ?>/img/icon/other.png" alt=""><label for="">หน่วยงานที่เกี่ยวข้อง</label></a></li>
-            <li><a href="#"><img src="<?= Yii::getAlias('@web') ?>/img/icon/intranet.png" alt=""><label for="">ระบบ Intranet</label></a></li>
+            <li><a href="http://192.168.100.1"><img src="<?= Yii::getAlias('@web') ?>/img/icon/intranet.png" alt=""><label for="">ระบบ Intranet</label></a></li>
             <li><a href="#"><img src="<?= Yii::getAlias('@web') ?>/img/icon/contact.png" alt=""><label for="">ติดต่อเรา</label></a></li>
             
         </ul>
     </div>
 </div>
 <!-- Conten ทั่วไป -->
+
+<?php echo $this->render('@app/views/king-event/card') ?>       
+
+<?php echo $this->render('@app/views/news-document/index') ?>       
 
 <!-- <body>
     <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>  
@@ -37,9 +43,13 @@
 </body> -->
 
 <section id="two">
+<div class="head-content pink">
+<img src="<?= Yii::getAlias('@web') ?>/img/icon/mask.png" class="icon" >  
+ความรู้ด้านสุขภาพ 
+</div>
     <div class="conten-service">
         <div class="service-box">
-            <img src="<?= Yii::getAlias('@web') ?>/img/service/กัญชา.png" alt="">           
+            <img src="<?= Yii::getAlias('@web') ?>/img/service/xxx.png" alt="">           
             <p>
                 การใช้กัญชาทางการแพทย์ เพื่อเพิ่มโอกาส
                 ในการรักษาโรคให้กับประชาชนที่เจ็บป่วยทรมาน
